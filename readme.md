@@ -1,14 +1,18 @@
-Autosize Stackview Demo
+# Autosize Stackview Demo
 
-`UIStackView` is designed to grow its size according to the content. In order for that to work, you need to set up the constraints between the `UIStackView` and the `UITableViewCell`. For example, this is how the constraints look like in interface builder: 
+## Setup
+
+`UIStackView` is designed to grow its size according to the content. In order for that to work, you need to set up the appropriate constraints between the `UIStackView` and the `UITableViewCell`. For example, this is how the constraints look like in interface builder: 
 
 [![enter image description here][1]][1]
 [![enter image description here][2]][2]
 
 
-If you like setting up constraints in code, that should work too. 
+If you like setting up constraints in code, that should work too. Just have to add the constraints to the four sides: leading, trailing, top and bottom.
 
-To demonstrate that this will work, I have this for the `cellForRowAt` function. Basically, it puts a number of `UILabel` inside the `stackView` and the label count is depending on the row number. 
+## Result
+
+To demonstrate the result, I have this as the `cellForRowAt` function. Basically, it puts a number of `UILabel` inside the `stackView` and the label count is depending on the row number (i.e. one label in the 1st row, two labels in the 2nd row, and etc.). 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableviewCell", for: indexPath) as! TableviewCell
